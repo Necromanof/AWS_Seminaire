@@ -22,7 +22,6 @@ nav a {
     display: flex;
     justify-content: flex-end;
     color: white;
-    text-decoration: none;
     text-align: center;
 }
 
@@ -31,7 +30,6 @@ nav a {
 }
 
 .card a {
-    text-decoration: none;
     color: black;
 }
 
