@@ -25,6 +25,12 @@ nav a {
     text-align: center;
 }
 
+.allCard{
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
 .card h3 {
     margin : 5px;
 }
@@ -44,15 +50,14 @@ img {
     display: flex;
     justify-content: space-around;
     align-content: flex-start;
-    /* max-width: 1000px; */
 }
 
 .blocCard2 {
     display: flex;
     justify-content: space-around;
     align-content: flex-start;  
-    /* max-width: 1000px; */
 }
+
 
 
 .card {
