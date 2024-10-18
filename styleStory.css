@@ -1,0 +1,13 @@
+body {
+    background-color: beige;
+    font-family: sans-serif;
+
+}
+
+nav {
+    margin-top: 0px;
+    padding: 10px;
+    background-color: #aa4f00;
+    font-family: sans-serif;
+    text-align: center;
+}

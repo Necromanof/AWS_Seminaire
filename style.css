@@ -42,8 +42,18 @@ img {
 
 .blocCard {
     display: flex;
-    justify-content: space-around;    
+    justify-content: space-around;
+    align-content: flex-start;
+    /* max-width: 1000px; */
 }
+
+.blocCard2 {
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;  
+    /* max-width: 1000px; */
+}
+
 
 .card {
     display: flex;
