@@ -63,6 +63,7 @@ app.post('/logout', (req,res) => {
             res.status(500).json({error: 'Server error'});
         } else {
             res.json({message: 'Logout succesful'});
+            res.redirect("login.html");
         }
     });
 });
