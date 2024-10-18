@@ -19,24 +19,25 @@ app.use(session({
 // Middleware pour servir des fichiers statiques
 app.use(express.static('public'));
 
-// const requireAuth = (req,res,next) => {
-//     if(req.session && req.session.user) {
-//         //si user authentifié, on continue
-//         return next();
-//     } else {
-//         // sinon renvoyer une erreur : non autorisée
-//         return res.status(401).json({error:'Unauthorized'});
-//     }
-// };
+const requireAuth = (req,res,next) => {
+    if(req.session && req.session.user) {
+        //si user authentifié, on continue
+        return next();
+    } else {
+        // sinon renvoyer une erreur : non autorisée
+        return res.status(401).json({error:'Unauthorized'});
+    }
+};
 
 const users = [
     { id: 1, username: 'user1', password: 'password1' },
     { id: 2, username: 'user2', password: 'password2' },
+    { id: 3, username: 'admin', password: 'admin'},
 ];
 
-// app.get('/users', requireAuth, (req,res) => {
-//     res.json(users);
-// })
+app.get('/users', requireAuth, (req,res) => {
+    res.json(users);
+})
 
 // Route de connexion
 app.post('/login', (req,res) => {
@@ -47,24 +48,24 @@ app.post('/login', (req,res) => {
     if(user) {
         //Authent réussie, stocker user dans la session
         req.session.user = user;
-        res.redirect('membre.html');
+        res.redirect('index.html');
     } else {
         res.send('Unauthorized');
     }
 });
 
-// // route de déconnexion 
-// app.post('/logout', (req,res) => {
-//     req.session.destroy(err =>{
-//         //déco de l'user en supprimant sa session
-//         if (err){
-//             console.error(err);
-//             res.status(500).json({error: 'Server error'});
-//         } else {
-//             res.json({message: 'Logout succesful'});
-//         }
-//     });
-// });
+// route de déconnexion 
+app.post('/logout', (req,res) => {
+    req.session.destroy(err =>{
+        //déco de l'user en supprimant sa session
+        if (err){
+            console.error(err);
+            res.status(500).json({error: 'Server error'});
+        } else {
+            res.json({message: 'Logout succesful'});
+        }
+    });
+});
 
 
 // Demarrer le server
