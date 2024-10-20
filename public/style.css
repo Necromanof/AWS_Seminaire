@@ -1,20 +1,22 @@
 body {
-    background-color: beige;
-    font-family: sans-serif;
-    margin: 0;
+  background-color: #ebe2d6;
+  font-family: sans-serif;
+  margin: 0;
 }
 
 
 nav  {
-    padding: 10px;
-    background-color: #aa4f00;
+    display: flex;
+    padding: 30px;
+    background-color: #202020;
     font-family: sans-serif;
-    text-align: center;
-    width: 99%;
+    justify-content: space-between;
+    align-items:baseline;
+    width: 96%;
 }
 
 nav h1 {
-    color: white;
+    color: #ebe2d6;
     margin: 0px;
 
 }
@@ -26,9 +28,6 @@ nav a {
     text-align: center;
 }
 
-.main {
-
-}
 
 .allCard{
   display: flex;
@@ -46,7 +45,6 @@ nav a {
 
 img {
     margin: 10px;
-    margin-left: 0px;
     width: 200px;
     height: 250px;
 }
@@ -64,18 +62,22 @@ img {
 }
 
 
-
 .card {
-    display: flex;
-    flex-direction: column; 
-
+  display: flex;
+  flex-direction: column;
+  background-color: #9a725234;
+  border-radius: 20px;
+  align-items: center;
+  text-align: center;
 }
 
 .card h3 {
     display: flex;
     justify-content: flex-start;
-    margin-left: 0px;
+
 }
+
+
 
 .topnav {
     overflow: hidden;
